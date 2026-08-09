@@ -185,6 +185,8 @@
 
 @utility section-pad {
   padding-block: clamp(4rem, 8vw, 8rem);
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 600px;
 }
 
 @keyframes blob-drift {

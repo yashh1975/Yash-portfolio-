@@ -48,7 +48,7 @@ export function Nav() {
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
-      className="fixed inset-x-0 top-0 z-50 w-full max-w-full px-4 pt-4 overflow-x-hidden"
+      className="fixed inset-x-0 top-0 z-50 px-4 pt-4"
     >
       <nav
         className={cn(
@@ -78,17 +78,18 @@ export function Nav() {
             <button
               onClick={() => setPalette((p) => !p)}
               aria-label="Change accent color"
-              className="grid size-9 place-items-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:text-foreground"
+              className="grid size-9 place-items-center rounded-full border border-border/60 text-muted-foreground transition-colors hover:text-foreground active:scale-95"
             >
-              <Palette className="size-4" />
+              <Palette className="size-4 text-primary" />
             </button>
             <AnimatePresence>
               {palette && (
                 <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                  className="glass absolute right-0 mt-2 flex gap-2 rounded-2xl p-3"
+                  exit={{ opacity: 0, y: 8, scale: 0.95 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute right-0 mt-3 flex items-center gap-2.5 rounded-2xl border border-white/20 bg-[#0a0d18]/95 p-3 shadow-2xl backdrop-blur-2xl z-[90] min-w-max"
                 >
                   {ACCENTS.map((a) => (
                     <button
@@ -96,7 +97,7 @@ export function Nav() {
                       title={a.name}
                       aria-label={`${a.name} accent`}
                       onClick={() => applyAccent(a)}
-                      className="size-6 rounded-full ring-1 ring-border transition-transform hover:scale-110"
+                      className="size-7 rounded-full ring-2 ring-white/20 transition-all hover:scale-115 hover:ring-white active:scale-95 shadow-md"
                       style={{ background: `linear-gradient(135deg, ${a.primary}, ${a.accent})` }}
                     />
                   ))}
