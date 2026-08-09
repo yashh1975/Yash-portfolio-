@@ -57,7 +57,7 @@ export function Nav() {
         )}
       >
         <a href="#top" className="font-display text-lg font-bold tracking-tight">
-          yash<span className="text-gradient">.dev</span>
+          yashh<span className="text-gradient">.pages.dev</span>
         </a>
 
         <ul className="hidden items-center gap-1 md:flex">
