@@ -8,6 +8,10 @@ export default defineConfig(({ command }) => ({
   plugins: [
     tanstackStart({
       server: { entry: "server" },
+      prerender: {
+        enabled: true,
+      },
+      pages: [{ path: "/" }],
       importProtection: {
         behavior: "error",
         client: {
