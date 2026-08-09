@@ -2,13 +2,13 @@ export const RESUMES = [
   {
     label: "AI / ML Resume",
     desc: "Machine learning, NLP and generative AI focus.",
-    file: "/resumes/AI_YASH_RESUME.pdf?v=2",
+    file: "/resumes/AI_YASH_RESUME.pdf",
     filename: "Yashwanth-Kumar-S-AI-Resume.pdf",
   },
   {
     label: "Cloud / DevOps Resume",
     desc: "Cloud engineering, CI/CD and secure infrastructure focus.",
-    file: "/resumes/CLOUD_YASH_RESUME.pdf?v=2",
+    file: "/resumes/CLOUD_YASH_RESUME.pdf",
     filename: "Yashwanth-Kumar-S-Cloud-Resume.pdf",
   },
 ];
