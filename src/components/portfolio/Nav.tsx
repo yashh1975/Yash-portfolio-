@@ -117,24 +117,27 @@ export function Nav() {
 
       <AnimatePresence>
         {open && (
-          <motion.ul
-            initial={{ opacity: 0, y: -10 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            className="glass mx-auto mt-2 grid max-w-6xl gap-1 rounded-3xl p-3 md:hidden"
+          <motion.div
+            initial={{ opacity: 0, y: -10, scale: 0.98 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.98 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="mx-auto mt-3 max-w-6xl overflow-hidden rounded-3xl border border-white/15 bg-[#0a0d18]/95 p-3 shadow-2xl backdrop-blur-2xl md:hidden"
           >
-            {LINKS.map(([label, id]) => (
-              <li key={id}>
-                <a
-                  href={`#${id}`}
-                  onClick={() => setOpen(false)}
-                  className="block rounded-2xl px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-                >
-                  {label}
-                </a>
-              </li>
-            ))}
-          </motion.ul>
+            <ul className="grid gap-1">
+              {LINKS.map(([label, id]) => (
+                <li key={id}>
+                  <a
+                    href={`#${id}`}
+                    onClick={() => setOpen(false)}
+                    className="block rounded-2xl px-5 py-3.5 text-base font-semibold text-foreground/90 transition-all hover:bg-white/10 hover:text-primary active:bg-white/15"
+                  >
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         )}
       </AnimatePresence>
     </motion.header>

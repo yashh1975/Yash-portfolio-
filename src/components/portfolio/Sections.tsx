@@ -118,14 +118,18 @@ export function Skills() {
                           <span className="text-foreground/90">{s.name}</span>
                           <span className="text-muted-foreground">{s.level}%</span>
                         </div>
-                        <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-secondary">
+                        <div className="mt-2 h-2 overflow-hidden rounded-full bg-secondary/80">
                           <motion.div
                             className="h-full rounded-full"
-                            style={{ background: "var(--gradient-brand)" }}
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${s.level}%` }}
-                            viewport={{ once: true, margin: "-60px" }}
-                            transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+                            style={{
+                              background: "var(--gradient-brand)",
+                              width: `${s.level}%`,
+                              transformOrigin: "left center",
+                            }}
+                            initial={{ scaleX: 0 }}
+                            whileInView={{ scaleX: 1 }}
+                            viewport={{ once: true, amount: 0.1 }}
+                            transition={{ duration: 1.0, ease: [0.22, 1, 0.36, 1] }}
                           />
                         </div>
                       </li>

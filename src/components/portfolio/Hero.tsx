@@ -38,11 +38,17 @@ function Typewriter() {
 
 export function Hero({ onResume }: { onResume: () => void }) {
   const { scrollY } = useScroll();
-  const artY = useTransform(scrollY, [0, 600], [0, 90]);
-  const textY = useTransform(scrollY, [0, 600], [0, 40]);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(window.innerWidth >= 768);
+  }, []);
+
+  const artY = useTransform(scrollY, [0, 600], [0, isDesktop ? 90 : 0]);
+  const textY = useTransform(scrollY, [0, 600], [0, isDesktop ? 40 : 0]);
 
   return (
-    <section id="top" className="relative flex min-h-screen items-center px-4 pt-28 pb-20 sm:pt-32">
+    <section id="top" className="relative flex min-h-[100dvh] items-center px-4 pt-28 pb-16 sm:min-h-screen sm:pt-32 sm:pb-20">
       <div className="mx-auto grid w-full max-w-6xl items-center gap-14 lg:grid-cols-[1.05fr_0.95fr]">
         <motion.div style={{ y: textY }}>
           <motion.span
