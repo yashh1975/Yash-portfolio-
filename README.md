@@ -1,6 +1,6 @@
 # Yashwanth's Digital Canvas – Software Engineer Portfolio
 
-🔗 **Live Application** 👉 [https://yashwanth-portfolio.pages.dev/](https://yashwanth-portfolio.pages.dev/)
+🔗 **Live Application** 👉 [https://yashh.pages.dev/](https://yashh.pages.dev/)
 
 ---
 
