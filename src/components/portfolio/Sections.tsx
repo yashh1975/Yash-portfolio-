@@ -431,8 +431,8 @@ type GhStats = { contributions: number; repos: number; levels: number[] };
 type LcStats = { solved: number; easy: number; medium: number; hard: number };
 
 const DEFAULT_GH: GhStats = {
-  contributions: 248,
-  repos: 12,
+  contributions: 69,
+  repos: 14,
   levels: Array.from({ length: 7 * 26 }, (_, i) =>
     i % 7 === 0 ? 3 : i % 3 === 0 ? 1 : i % 5 === 0 ? 2 : i % 11 === 0 ? 4 : 0,
   ),

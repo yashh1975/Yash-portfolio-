@@ -48,7 +48,7 @@ export function Nav() {
       initial={{ y: -70, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.9 }}
-      className="fixed inset-x-0 top-0 z-50 px-4 pt-4"
+      className="fixed inset-x-0 top-0 z-50 w-full max-w-full px-4 pt-4 overflow-x-hidden"
     >
       <nav
         className={cn(

@@ -207,11 +207,11 @@ export function ChatBot() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 24, scale: 0.95 }}
+            initial={{ opacity: 0, y: 16, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 24, scale: 0.95 }}
-            transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-            className="glass-card fixed bottom-24 right-6 z-[70] flex h-[26rem] w-[min(22rem,calc(100vw-3rem))] flex-col overflow-hidden"
+            exit={{ opacity: 0, y: 16, scale: 0.96 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="glass-card fixed bottom-20 right-4 z-[70] flex h-[26rem] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden sm:bottom-24 sm:right-6"
           >
             <div className="flex items-center gap-2 border-b border-border/60 px-5 py-4">
               <Bot className="size-4 text-primary" />
