@@ -87,18 +87,18 @@ export function Background() {
     <div aria-hidden className="pointer-events-none fixed inset-0 -z-10 overflow-hidden">
       <div className="absolute inset-0 bg-background" />
       <div
-        className="animate-blob absolute -left-40 -top-40 size-[28rem] rounded-full opacity-35 blur-[90px] sm:size-[38rem] sm:opacity-40 sm:blur-[110px]"
+        className="animate-blob absolute left-0 top-0 size-[20rem] rounded-full opacity-35 blur-[70px] sm:-left-40 sm:-top-40 sm:size-[38rem] sm:opacity-40 sm:blur-[110px]"
         style={{ background: "radial-gradient(circle, var(--primary), transparent 65%)" }}
       />
       <div
-        className="animate-blob absolute -right-32 top-1/3 size-[26rem] rounded-full opacity-30 blur-[90px] sm:size-[34rem] sm:opacity-35 sm:blur-[120px]"
+        className="animate-blob absolute right-0 top-1/3 size-[18rem] rounded-full opacity-30 blur-[70px] sm:-right-32 sm:size-[34rem] sm:opacity-35 sm:blur-[120px]"
         style={{
           background: "radial-gradient(circle, var(--accent), transparent 65%)",
           animationDelay: "-7s",
         }}
       />
       <div
-        className="animate-blob absolute bottom-0 left-1/3 size-[24rem] rounded-full opacity-25 blur-[90px] sm:size-[30rem] sm:opacity-30 sm:blur-[120px]"
+        className="animate-blob absolute bottom-0 left-1/4 size-[18rem] rounded-full opacity-25 blur-[70px] sm:left-1/3 sm:size-[30rem] sm:opacity-30 sm:blur-[120px]"
         style={{
           background: "radial-gradient(circle, var(--secondary-accent), transparent 65%)",
           animationDelay: "-14s",

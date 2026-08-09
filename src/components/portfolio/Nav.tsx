@@ -13,10 +13,10 @@ const LINKS = [
 ] as const;
 
 const ACCENTS = [
-  { name: "Indigo", primary: "oklch(0.53 0.23 274)", accent: "oklch(0.65 0.24 305)", cyan: "oklch(0.72 0.13 210)" },
-  { name: "Cyan", primary: "oklch(0.68 0.14 205)", accent: "oklch(0.62 0.19 250)", cyan: "oklch(0.78 0.15 175)" },
-  { name: "Violet", primary: "oklch(0.62 0.24 305)", accent: "oklch(0.68 0.2 340)", cyan: "oklch(0.7 0.16 280)" },
-  { name: "Emerald", primary: "oklch(0.66 0.16 165)", accent: "oklch(0.72 0.15 195)", cyan: "oklch(0.78 0.14 150)" },
+  { name: "Indigo", primary: "#4f46e5", accent: "#a855f7", cyan: "#06b6d4" },
+  { name: "Cyan", primary: "#06b6d4", accent: "#3b82f6", cyan: "#14b8a6" },
+  { name: "Violet", primary: "#8b5cf6", accent: "#ec4899", cyan: "#a855f7" },
+  { name: "Emerald", primary: "#10b981", accent: "#06b6d4", cyan: "#10b981" },
 ];
 
 export function Nav() {
