@@ -15,8 +15,9 @@ export function Background() {
     let h = 0;
     let lastWidth = window.innerWidth;
     const isMobile = window.innerWidth < 768;
-    const dpr = isMobile ? 1 : Math.min(window.devicePixelRatio || 1, 2);
-    const count = isMobile ? 18 : 65;
+    if (isMobile) return; // Skip heavy canvas RAF loop on mobile iOS Safari for 120Hz liquid smooth scroll
+    const dpr = Math.min(window.devicePixelRatio || 1, 2);
+    const count = 65;
 
     const pts = Array.from({ length: count }, () => ({
       x: Math.random(),

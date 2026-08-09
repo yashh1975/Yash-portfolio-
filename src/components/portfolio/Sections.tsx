@@ -485,25 +485,32 @@ function useProfileStats() {
         /* fallback */
       }
 
-      // 3. LeetCode Stats API
-      try {
-        const r = await fetch(
-          `https://leetcode-stats-api.herokuapp.com/${SITE.leetcodeUser}`,
-        );
-        if (r.ok) {
-          const d = await r.json();
-          if (alive && d?.status === "success" && typeof d?.totalSolved === "number") {
-            setLc({
-              solved: d.totalSolved,
-              easy: d.easySolved ?? 0,
-              medium: d.mediumSolved ?? 0,
-              hard: d.hardSolved ?? 0,
-            });
-            return;
+      // 3. LeetCode Stats API (Multiple resilient endpoints)
+      const lcEndpoints = [
+        `https://leetcode-stats-api.herokuapp.com/${SITE.leetcodeUser}`,
+        `https://alfa-leetcode-api.onrender.com/userProfile/${SITE.leetcodeUser}`,
+        `https://leetcode-api-faisalshohag.vercel.app/${SITE.leetcodeUser}`,
+      ];
+
+      for (const endpoint of lcEndpoints) {
+        try {
+          const r = await fetch(endpoint);
+          if (r.ok) {
+            const d = await r.json();
+            const total = d.totalSolved ?? d.solvedProblem ?? d.total_solved;
+            if (alive && typeof total === "number" && total > 0) {
+              setLc({
+                solved: total,
+                easy: d.easySolved ?? d.easy_solved ?? 72,
+                medium: d.mediumSolved ?? d.medium_solved ?? 68,
+                hard: d.hardSolved ?? d.hard_solved ?? 14,
+              });
+              break;
+            }
           }
+        } catch {
+          /* try next endpoint or use DEFAULT_LC */
         }
-      } catch {
-        /* fallback to DEFAULT_LC */
       }
     })();
 
