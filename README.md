@@ -12,12 +12,9 @@
 
 ## ✨ Features
 
-* 🔒 **Military-Grade Encryption Showcase** – Highlights SecureVault zero-knowledge AES-256 cloud encryption architecture and cybersecurity credentials.
-* ☁️ **Hybrid Cloud & DevOps** – Combines AWS, Google Cloud, and CI/CD automation pipelines from industry internships.
 * 📈 **Live GitHub & LeetCode Metrics** – Auto-fetches real-time contribution heatmaps, public repo counts, and problem-solving breakdowns.
 * 📄 **Interactive PDF Certificate & Resume Viewer** – In-browser modal viewer for credentials and resume downloads.
 * 🤖 **AI Portfolio Chatbot** – Interactive assistant answering queries about skills, projects, and availability.
-* 📁 **Bulk Operations** – Select multiple files to restore, delete, or manage efficiently.
 * 🎨 **Premium UI** – Custom glass-morphism aesthetic with dark-mode optimized colors, smooth-scroll navigation, and micro-animations.
 * 📱 **Fully Responsive** – A seamless experience across desktop, tablet, and mobile devices.
 
