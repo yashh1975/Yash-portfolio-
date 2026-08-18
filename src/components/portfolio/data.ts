@@ -127,6 +127,16 @@ export const PROJECTS: {
   demo?: string;
 }[] = [
   {
+    title: "DGen AI",
+    blurb:
+      "AI synthetic data generation platform designed for privacy-preserving data synthesis, automated dataset creation, and analytics.",
+    tags: ["AI", "Generative AI", "Python", "React", "Cloudflare"],
+    category: "AI",
+    metric: "Synthetic AI Data",
+    code: "https://github.com/yashh1975/DGen-AI",
+    demo: "https://dgen-ai.pages.dev",
+  },
+  {
     title: "SMS Spam Detection",
     blurb:
       "Real-time spam classifier built with TF-IDF vectorisation and classical ML, wrapped in a Streamlit interface.",
