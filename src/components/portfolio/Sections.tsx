@@ -439,10 +439,10 @@ const DEFAULT_GH: GhStats = {
 };
 
 const DEFAULT_LC: LcStats = {
-  solved: 154,
-  easy: 72,
-  medium: 68,
-  hard: 14,
+  solved: 26,
+  easy: 12,
+  medium: 10,
+  hard: 4,
 };
 
 function useProfileStats() {
@@ -485,10 +485,10 @@ function useProfileStats() {
         /* fallback */
       }
 
-      // 3. LeetCode Stats API (Multiple resilient endpoints)
+      // 3. LeetCode Live API
       const lcEndpoints = [
-        `https://leetcode-stats-api.herokuapp.com/${SITE.leetcodeUser}`,
-        `https://alfa-leetcode-api.onrender.com/userProfile/${SITE.leetcodeUser}`,
+        `https://alfa-leetcode-api.onrender.com/${SITE.leetcodeUser}/solved`,
+        `https://alfa-leetcode-api.onrender.com/${SITE.leetcodeUser}`,
         `https://leetcode-api-faisalshohag.vercel.app/${SITE.leetcodeUser}`,
       ];
 
@@ -497,13 +497,13 @@ function useProfileStats() {
           const r = await fetch(endpoint);
           if (r.ok) {
             const d = await r.json();
-            const total = d.totalSolved ?? d.solvedProblem ?? d.total_solved;
+            const total = d.solvedProblem ?? d.totalSolved ?? d.total_solved;
             if (alive && typeof total === "number" && total > 0) {
               setLc({
                 solved: total,
-                easy: d.easySolved ?? d.easy_solved ?? 72,
-                medium: d.mediumSolved ?? d.medium_solved ?? 68,
-                hard: d.hardSolved ?? d.hard_solved ?? 14,
+                easy: d.easySolved ?? d.easy_solved ?? 12,
+                medium: d.mediumSolved ?? d.medium_solved ?? 10,
+                hard: d.hardSolved ?? d.hard_solved ?? 4,
               });
               break;
             }
