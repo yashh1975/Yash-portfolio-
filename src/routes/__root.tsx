@@ -74,22 +74,39 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Yashwanth Kumar S — Software Engineer, AI & Cloud Developer" },
+      { title: "Yashwanth Kumar S | AI & Cloud Software Engineer | Official Portfolio" },
       {
         name: "description",
         content:
-          "Portfolio of Yashwanth Kumar S: software engineer building scalable applications, AI solutions and secure cloud systems.",
+          "Official portfolio of Yashwanth Kumar S — AI/ML Engineer, Cloud Developer & Full Stack Specialist. Explore projects, LeetCode stats, and skills.",
+      },
+      {
+        name: "keywords",
+        content:
+          "Yashwanth Kumar, Yashwanth S, Yashwanth Kumar S, Yashwanth Portfolio, Yashwanth AI Engineer, Yashwanth Cloud Developer, yashh.pages.dev",
       },
       { name: "author", content: "Yashwanth Kumar S" },
-      { property: "og:title", content: "Yashwanth Kumar S — Software Engineer" },
+      { name: "robots", content: "index, follow" },
+      { property: "og:title", content: "Yashwanth Kumar S | AI & Cloud Software Engineer | Portfolio" },
       {
         property: "og:description",
-        content: "Scalable applications, intelligent AI solutions and modern web experiences.",
+        content:
+          "Official portfolio of Yashwanth Kumar S — AI/ML Engineer, Cloud Developer & Full Stack Specialist.",
       },
+      { property: "og:url", content: "https://yashh.pages.dev/" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Yashwanth Kumar S Portfolio" },
+      { property: "og:image", content: "https://yashh.pages.dev/favicon.png" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: "Yashwanth Kumar S | AI & Cloud Software Engineer" },
+      {
+        name: "twitter:description",
+        content:
+          "Official portfolio of Yashwanth Kumar S — AI/ML Engineer, Cloud Developer & Full Stack Specialist.",
+      },
     ],
     links: [
+      { rel: "canonical", href: "https://yashh.pages.dev/" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
@@ -115,6 +132,35 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang="en" className="dark">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              "name": "Yashwanth Kumar S",
+              "alternateName": ["Yashwanth S", "Yashwanth Kumar"],
+              "url": "https://yashh.pages.dev/",
+              "image": "https://yashh.pages.dev/favicon.png",
+              "sameAs": [
+                "https://github.com/yashh1975",
+                "https://leetcode.com/u/YASHWANTHKUMARS/"
+              ],
+              "jobTitle": "AI & Cloud Engineer",
+              "description":
+                "Software engineer building scalable applications, AI solutions, and secure cloud systems.",
+              "knowsAbout": [
+                "Artificial Intelligence",
+                "Machine Learning",
+                "Cloud Computing",
+                "Software Engineering",
+                "React",
+                "Python",
+                "Java"
+              ]
+            }),
+          }}
+        />
       </head>
       <body>
         {children}
